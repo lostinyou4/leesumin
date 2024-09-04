@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+.bungee-shade {
+    font-family: "Bungee Shade", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'PP Mori';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/pp-mori-regular.woff2) format('woff2');
+  }
+@font-face {
+    font-family: 'PP Mori';
+    font-style: normal;
+    font-weight: 500;
+    src: url(../fonts/pp-mori-semibold.woff2) format('woff2');
+  }
+  @font-face {
+    font-family: "PP Eiko";
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/pp-eiko-light-italic.woff2) format('woff2');
+  }
+
+  @font-face {
+    font-family: 'NanumSquare';
+    font-style: normal;
+    font-weight: 100;
+    src: local('※'),
+        url('../fonts/NanumSquareL.woff2') format('woff2'), 
+        url('../fonts/NanumSquareL.woff') format('woff'),
+        url('../fonts/NanumSquareL.ttf') format('truetype'),
+        url('../fonts/NanumSquareL.otf') format('opentype'),
+        url('../fonts/NanumSquareL.eot') format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'NanumSquare';
+    font-style: normal;
+    font-weight: 400;
+    src: local('※'),
+        url('../fonts/NanumSquareR.woff2') format('woff2'), 
+        url('../fonts/NanumSquareR.woff') format('woff'),
+        url('../fonts/NanumSquareR.ttf') format('truetype'),
+        url('../fonts/NanumSquareR.otf') format('opentype'),
+        url('../fonts/NanumSquareR.eot') format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'NanumSquare';
+    font-style: normal;
+    font-weight: 700;
+    src: local('※'),
+        url('../fonts/NanumSquareB.woff2') format('woff2'), 
+        url('../fonts/NanumSquareB.woff') format('woff'),
+        url('../fonts/NanumSquareB.ttf') format('truetype'),
+        url('../fonts/NanumSquareB.otf') format('opentype'),
+        url('../fonts/NanumSquareB.eot') format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'NanumSquare';
+    font-style: normal;
+    font-weight: 900;
+    src: local('※'),
+        url('../fonts/NanumSquareEB.woff2') format('woff2'), 
+        url('../fonts/NanumSquareEB.woff') format('woff'),
+        url('../fonts/NanumSquareEB.ttf') format('truetype'),
+        url('../fonts/NanumSquareEB.otf') format('opentype'),
+        url('../fonts/NanumSquareEB.eot') format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 300;
+    src:  url('../fonts/Pretendard-Light.woff') format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    src:  url('../fonts/Pretendard-Regular.woff') format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    src:  url('../fonts/Pretendard-SemiBold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    src:  url('../fonts/Pretendard-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 900;
+    src:  url('../fonts/Pretendard-Black.woff') format('woff');
+}
+
+
+:root{
+    --c-accent: #7570c6;
+    --c-dark: #1c1c1c;
+    --ff-secondary: "PP Eiko",serif;
+
+    /* .spec .spec-list > dl:after */
+    --width: 1px;
+    --height: 1px;
+}
+html{height: 100%;}
+body{
+    position: relative;
+    min-height:100%;
+    font-family: 'PP Mori', 'Pretendard', sans-serif;
+    color: var(--c-dark);
+}
+#wrap {transition: background .5s;}
+h1,h2,h3,h4,h5,h6{letter-spacing: -.02em;}
+::selection{
+    background: var(--c-accent);
+    color: #fff;
+}
+
+html.lenis, html.lenis body {
+    height: auto;
+  }
+  
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+  
+
+.inner{
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.grid{
+    display: grid; gap: 0 18px; grid-template-columns: repeat(12, 1fr);
+}
+
+.blind{
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    margin: -1px;
+    clip: rect(0,0,0,0);
+
+}
+.mo-show {display: none;}
+.light{background: #f2f2f2;}
+.dark{background: #1c1f21;}
+.italic {font-family: var(--ff-secondary); font-weight: 300;}
+
+[data-split='chars'] {display: flex;}
+.splitting .word {display: flex;}
+.char-wrap {overflow: hidden; vertical-align: middle; line-height: 1;}
+.char {display: block;}
+.chars .whitespace {display: block; width: 0.2em;}
+
+.cursor {pointer-events: none;}
+.cursor .big,
+.cursor .small {position: fixed; top: 0; left: 0; z-index: 99999; border-radius: 50%; transform-origin: 50% 50%; mix-blend-mode: difference; transition: .3s ease-in-out; transition-property: background; }
+.cursor .big {display: flex; align-items: center; justify-content: center; width: 75px; height: 75px; border: 1px solid #fff;}
+.cursor.view .big {background: #4b00ff; border: none; transform: scale(1.7); mix-blend-mode: normal;}
+.cursor .text {overflow: hidden; font-size: 12px; color: #fff; text-transform: capitalize;}
+.cursor .text span {display: block;}
+.cursor .small {width: 7px; height: 7px; background: #fff;}
+.cursor.view .small {opacity: 0;}
+.cursor.cursor-anchor .big{background: #fff; transform:scale(.4);}
+
+
+@media (hover:none) {
+    .cursor {display: none;}
+
+}
+
+@media (min-width:769px){
+    body{cursor: none;}
+}
+@media (max-width: 768px){
+    .pc-show{display: none;}
+    .mo-show{display: block;}
+}

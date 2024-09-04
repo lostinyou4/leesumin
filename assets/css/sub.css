@@ -1,0 +1,121 @@
+@charset "utf-8";
+
+.work-group h2 {
+    font-weight: 700;
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+    line-height: 1.3;
+}
+.work-close {
+    position: fixed;
+    z-index: 9;
+    right: 30px;
+    top: 30px;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    padding: 15px;
+    border-radius: 100%;
+    background: rgba(255, 255, 255);
+}
+.work-close svg {width: 100%;}
+.work-group .bg {
+    width: 100%;
+    height: 470px;
+    background-attachment: fixed;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.work-group .bg .inner {
+    position: relative;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.work-group .content {background: #fff;}
+.work-group .content .inner {max-width: 1280px;}
+.work-group .summary {
+    display: flex;
+    flex-direction: row;
+    padding-top: 70px;
+    margin-bottom: 80px;
+}
+.work-group .summary .item {
+    width: 33%;
+    height: 250px;
+    padding: 50px 50px;
+    border-right: 1px solid #eaeaea;
+    box-sizing: border-box;
+}
+.work-group .summary .item:last-child{border-right: none}
+.work-group .summary h4 {
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 1.3;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+.work-group .summary dl + dl {padding-top: 50px}
+.work-group .summary dl dt{
+    padding-bottom: 17px;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.work-group .summary dl dd {
+    font-size: 14px;
+    color: #777;
+}
+.work-group .btn-gosite {
+    display: inline-block;
+    padding: 10px 13px;
+    margin-top: 50px;
+    border: 1px solid;
+    transition: all 0.1s;
+}
+.work-group .btn-gosite:hover {color:var(--c-accent)}
+.work-group .image {padding-bottom: 150px}
+.work-group .image img {margin-top: 30px}
+
+@media (max-width: 1024px){
+    .work-group h2 {padding: 0 20px;}
+    .work-group .bg {height: 300px;}
+    .work-group .summary {
+        flex-direction: column;
+        padding: 0 30px;
+        margin-bottom: 0;
+    }
+    .work-group .summary .item {
+        width: 100%;
+        height: auto;
+        padding: 50px 0;
+        border: none;
+        border-bottom: 1px solid #eaeaea;
+    }
+    .work-group .summary .item:first-child{
+        padding-left: 0;
+        padding-right: 0;
+        border-left: none;
+    }
+    .work-group .summary .item:last-child{
+        border-bottom: none
+    }
+}
+
+@media (max-width: 768px){
+    .work-group h2 {font-size: 26px;}
+    .work-group .fix-cont {z-index: 99;}
+    .work-close {
+        right: 10px;
+        top: 10px;
+        width: 35px;
+        height: 35px;
+        padding: 10px;
+    }
+    .work-group .bg {height: 180px;}
+    .work-group .summary .item h4{font-size: 24px;}
+}
+

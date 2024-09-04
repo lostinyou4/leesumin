@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEE SUMIN PORTFOLIO</title>
+    <meta name="description" content="웹 퍼블리셔, 프론트엔드 개발자, UI 개발자 이수민 포트폴리오입니다.">
+    <meta property="og:title" content="웹 퍼블리셔, 프론트엔드 개발자, UI 개발자 이수민 포트폴리오입니다." />
+
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+
+    <link rel="stylesheet" href="/assets/css/splitting.css">
+
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/sub.css">
+
+    <script src="/assets/js/plugin/jquery.min.js"></script>
+    <script src="/assets/js/plugin/gsap.min.js"></script>
+    <script src="/assets/js/plugin/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <script src="/assets/js/plugin/lenis.min.js"></script>
+    <script src="/assets/js/plugin/split-type.min.js"></script>
+    <script src="/assets/js/plugin/splitting.min.js"></script>
+
+    <script src="/assets/js/script.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
+    <script>history.scrollRestoration = "manual"</script>
+
+    <style>
+        .letter-anim-group {display: flex; align-items: flex-end; min-height: 92vh; padding-bottom: 4%;  }
+        .letter-anim-group .content {width: 100%; align-items: self-end;}
+        .letter-anim-group .content h2 { grid-column: 2/ span 8; grid-row:1; font-weight: 600; font-size: min(9.1vw, 172px); line-height: 1; text-transform: uppercase;}
+        .letter-anim-group .content h2 p {position: relative; margin-bottom: -.2em; color: var(--c-dark); overflow: hidden;}
+        .letter-anim-group .content h2 p i,
+        .loading .percent-wrap i {font-family: var(--ff-secondary); font-weight: 300; line-height: 0.8;}
+        .letter-anim-group .year {grid-column: 1; font-size: 13px;}
+        .letter-anim-group .year i {font-family: var(--ff-secondary); }
+
+        .letter-anim-group .content .desc {grid-column: 10/ span 3; font-size: 25px;}
+
+        .loading {position: fixed; z-index: 99999; inset: 0 0 auto; background: #fff;}
+        .letter-anim-group .anim {display: block;}
+        .loading .percent-wrap{display: flex; overflow: hidden;}
+        .loading .percent-wrap i {display: inline-block; margin-left: -1vw;}
+        .loading .percent-num {overflow: hidden; height: min(14vw, 138px); }
+        .loading .desc {opacity: 0;}
+        .loading .bar { width: 100%; height: 8dvh; background: var(--c-dark); transform:scaleX(0); transform-origin: 0 0;}
+
+        @media (max-width: 1280px){
+            .letter-anim-group {padding-top: 11vw; padding-bottom: 8vw; min-height: auto; align-items: start;}
+            .letter-anim-group .content h2 {grid-column: span 12; font-size: 14vw;}
+            .letter-anim-group .year {grid-column: span 3;}
+            .letter-anim-group .content .desc {grid-column: 7/13;}
+            .letter-anim-group .content .desc {padding-top: 50px; font-size: 20px;}
+        }
+
+        @media (max-width: 1024px){
+            
+            .letter-anim-group .content .desc {font-size: 15px;}
+            .hero .content h2 {padding-bottom: 2.7vw;}
+            
+        }
+
+        @media (max-width: 768px){
+            .letter-anim-group {padding-top: 30vw;}
+            .loading .letter-anim-group {height: 92vh;}
+            .loading .percent-num {height: 14vw;}
+        }
+
+        @media (max-width:450px){
+            .letter-anim-group .content .desc {grid-column: 6/13;}
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap" class="light">
+        <div class="cursor">
+            <div class="big"><div class="text"><span>View</span></div></div>
+            <div class="small"></div>
+        </div>
+        <section class="loading">
+            <div class="inner letter-anim-group">
+                <div class="content grid">
+                    <h2>
+                        <p><span class="anim">sumin's</span></p>
+                        <p><span class="anim">portfolio</span></p>
+                        <div class="percent-wrap">
+                            <div class="percent-num">
+                                <div class="item">000</div>
+                                <div class="item">025</div>
+                                <div class="item">050</div>
+                                <div class="item">075</div>
+                                <div class="item">100</div>
+                            </div>
+                            <i>%</i>
+                        </div>
+                    </h2>
+                    <div class="year"><i>©</i> 2024</div>
+                    <p class="desc">
+                        React Frameworks, <br class="pc-show"/>
+                        Responsive Web, <br class="pc-show"/>
+                        Web Accessibility & etc..
+                    </p>
+                </div>
+            </div>
+            <div class="bar"></div>
+        </section>
+
+        <header id="header">
+            <div class="inner">
+                <h1><a href="/">LEE SUMIN</a></h1>
+                <nav id="gnb">
+                    <a href="javascript:void(0)" class="btn-contact" data-splitting="chars">contact me</a>
+                    <div href="javascript:void(0)" class="btn-menu" aria-haspopup="true" aria-expanded="false">
+                        <a href="javascript:void(0)" class="btn">
+                            <span>menu</span>
+                            <div class="menu-icon">
+                                <div class="dot-row">
+                                    <div class="dot"></div>
+                                    <div class="dot"></div>
+                                </div>
+                                <div class="dot-row">
+                                    <div class="dot"></div>
+                                    <div class="dot"></div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="dim">
+                            <div class="menu-group" aria-modal="true" role="dialog" aria-labelledby="popup_label">
+                                <a href="javascript:void(0)" class="close">
+                                    <svg width="100%" height="100%" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_183_366)">
+                                        <path d="M8.28049 7.00007L13.7347 1.5459C13.8191 1.46181 13.8861 1.3618 13.9316 1.25166C13.9772 1.14151 14.0005 1.02343 14.0001 0.904235C14.0016 0.785317 13.9788 0.667344 13.9332 0.55752C13.8875 0.447697 13.82 0.348329 13.7347 0.265485C13.6518 0.180158 13.5524 0.112615 13.4426 0.0669806C13.3328 0.0213462 13.2148 -0.00142133 13.0959 6.86835e-05C12.9767 -0.000319948 12.8586 0.0229385 12.7485 0.0684976C12.6383 0.114057 12.5383 0.181011 12.4542 0.265485L7.00007 5.71965L1.5459 0.265485C1.46181 0.181011 1.3618 0.114057 1.25166 0.0684976C1.14151 0.0229385 1.02343 -0.000319948 0.904235 6.86835e-05C0.785317 -0.00142133 0.667344 0.0213462 0.55752 0.0669806C0.447697 0.112615 0.348329 0.180158 0.265485 0.265485C0.180158 0.348329 0.112615 0.447697 0.0669806 0.55752C0.0213462 0.667344 -0.00142133 0.785317 6.86835e-05 0.904235C-0.000319948 1.02343 0.0229385 1.14151 0.0684976 1.25166C0.114057 1.3618 0.181011 1.46181 0.265485 1.5459L5.71965 7.00007L0.265485 12.4542C0.181011 12.5383 0.114057 12.6383 0.0684976 12.7485C0.0229385 12.8586 -0.000319948 12.9767 6.86835e-05 13.0959C-0.00142133 13.2148 0.0213462 13.3328 0.0669806 13.4426C0.112615 13.5524 0.180158 13.6518 0.265485 13.7347C0.348329 13.82 0.447697 13.8875 0.55752 13.9332C0.667344 13.9788 0.785317 14.0016 0.904235 14.0001C1.02343 14.0005 1.14151 13.9772 1.25166 13.9316C1.3618 13.8861 1.46181 13.8191 1.5459 13.7347L7.00007 8.28049L12.4542 13.7347C12.5383 13.8191 12.6383 13.8861 12.7485 13.9316C12.8586 13.9772 12.9767 14.0005 13.0959 14.0001C13.3355 13.9993 13.565 13.9038 13.7344 13.7344C13.9038 13.565 13.9993 13.3355 14.0001 13.0959C14.0005 12.9767 13.9772 12.8586 13.9316 12.7485C13.8861 12.6383 13.8191 12.5383 13.7347 12.4542L8.28049 7.00007Z" fill="#999999"></path>
+                                        </g>
+                                        <defs>
+                                        <clipPath id="clip0_183_366">
+                                        <rect width="14" height="14" fill="white"></rect>
+                                        </clipPath>
+                                        </defs>
+                                        </svg>
+                                </a>
+                                <ul class="menu-list">
+                                    <li><a href="javascript:void(0)" data-splitting="chars">about</a></li>
+                                    <li><a href="javascript:void(0)" data-splitting="chars">portfolio</a></li>
+                                    <li><a href="javascript:void(0)" data-splitting="chars">experience</a></li>
+                                    <li><a href="javascript:void(0)" data-splitting="chars">contact</a></li>
+                                </ul>
+                                <a href="mailto:things8134@gmail.com" class="anchor" data-splitting="chars">things8134@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main id="container">
+            
+            <section class="hero" id="hero">
+                <div class="inner letter-anim-group">
+                    <div class="content grid">
+                        
+                        <h2>
+                            <p><span class="anim">web</span></p>
+                            <p><span class="anim">publisher <i>+</i></span></p>
+                            <p><span class="anim">frontend</span></p>
+                        </h2>
+                        <div class="year"><i>©</i> 2024</div>
+                        <p class="desc">
+                            React Frameworks, <br class="pc-show"/>
+                            Responsive Web, <br class="pc-show"/>
+                            Web Accessibility & etc..
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="cover">
+                <div class="inner">
+                    <div class="parallax">
+                        <div class="mask">
+                            <img class="img" src="./assets/img/cover.webp" alt="communication">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="about" id="about">
+                <div class="inner grid">
+                    <div class="content">
+                        <p class="richtext">
+                            <em>6년간 다져진 경험</em>으로 어떤 수정에도 꼬이지 않도록 컴포넌트화하여 코드를 짜는 것을 좋아하고, <br class="pc-show"/>문제를 해결하는 것을 좋아해 <em>'안 되는 것'</em> 보다는 <em>'주어진 기회'</em>에 집중하는 편입니다. <br />
+                            <span class="blank"></span>
+                            의사소통을 할 때 <em>양쪽이 만족할 수 있는 <br class="pc-show"/>최선의 결과</em>를 도출하기 위해 노력합니다.
+                        </p>
+                    </div>
+                    <h2 class="title">about me</h2>
+                </div>
+                <div class="inner grid">
+                    <div class="widgets-group">
+                        <h3>Now reading</h3>
+                        <ul class="list">
+                            <li>
+                                <div class="thumb"><img src="/assets/img/icon_book01.png" alt="book"></div>
+                                <div class="desc">
+                                    <u>모던 자바스크립트 Deep Dive</u>
+                                    <p>자바스크립트를 둘러싼 기본 개념을 정확하고 구체적으로 이해하고, 자바스크립트 코드의 동작 원리를 파악하고자 공부 중입니다</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="thumb"><img src="/assets/img/icon_book02.png" alt="book"></div>
+                                <div class="desc">
+                                    <u>코어 자바스크립트</u>
+                                    <p>최신 자바스크립트 명세를 반영해 안정적이고 효율적인 코드를 작성할 수 있는 기본기를 다지고, 실전에서 쓰이는 모던 자바스크립트 프레임워크나 도구를 완벽하게 이해하고 활용할 수 있도록 공부 중입니다.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="spec">
+                <div class="inner grid">
+                    <span class="blind">스펙</span>
+                    <div class="spec-list">
+                        <dl>
+                            <dt>web publishing</dt>
+                            <dd>
+                                웹표준 <i class="italic">+</i> 시맨틱 마크업<br />
+                                반응형 웹 제작 <i class="italic">+</i> SASS 사용 <br />
+                                JAVASCRIPT 동적 효과 구현 <br />
+                                jQuery 및 플러그인 수정 <i class="italic">+</i> 사용
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>front-end dev</dt>
+                            <dd>
+                                Hook 에 대한 이해와 사용 경험<br />
+                                React Router 이용하여 SPA 제작 <br />
+                                styled-component 활용하여 작업 <br />
+                                typescript에 대한 기초 지식
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>back-end dev</dt>
+                            <dd>
+                                node.js를 통한 웹 서버 구축<br />
+                                mongoDB, mongoose 활용한 CRUD 작업 <br />
+                                mySQL을 사용한 REST API 작업<br />
+                                jwt를 통한 토큰 작업, Axios 통한 비동기 통신 
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>collaboration</dt>
+                            <dd>
+                                ASP <i class="italic">/</i> PHP 언어 간단한 수정 가능<br />
+                                Git <i class="italic">/</i> SVN 이용하여 소스의 형상관리 <br />
+                                Figma를 이용한 협업 경험 보유<br />
+                                Photoshop, Illustrator 이미지 수정 작업
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </section>
+            <section class="work" id="career">
+                <div class="inner">
+                    <div class="head-group grid">
+                        <h2 data-splitting="chars">career</h2>
+                    </div>
+                    <div class="content">
+                        <div class="picture-box grid">
+                            <div class="cursor">
+                                <img class="cursor-img" src="./assets/img/thumb_sbsg.jpg" alt="pofol">
+                                <img class="cursor-img" src="./assets/img/thumb_sbsw.jpg" alt="pofol">
+                                <img class="cursor-img" src="./assets/img/thumb_ki.jpg" alt="pofol">
+                                <img class="cursor-img" src="./assets/img/thumb_sbsa.jpg" alt="pofol">
+                                <img class="cursor-img" src="./assets/img/thumb_atb.jpg" alt="pofol">
+                                <img class="cursor-img" src="./assets/img/thumb_kcook.jpg" alt="pofol">
+                                <img class="cursor-img" src="./assets/img/thumb_drm.jpg" alt="pofol">
+                                <img class="cursor-img" src="./assets/img/thumb_gge.jpg" alt="pofol">
+                                <img class="cursor-img" src="./assets/img/thumbnail_skm_m.jpg" alt="pofol">
+                                <img class="cursor-img" src="./assets/img/thumbnail_skm_w.jpg" alt="pofol">
+                                <img class="cursor-img" src="./assets/img/thumbnail_mdb.jpg" alt="pofol">
+                                <img class="cursor-img" src="./assets/img/thumbnail_skt.jpg" alt="pofol">
+                                <img class="cursor-img" src="./assets/img/thumbnail_minish.jpg" alt="pofol">
+                                <img class="cursor-img" src="./assets/img/thumb_trans.png" alt="pofol">
+                            </div>
+                        </div>
+                        <ul class="work-list">
+                            <li class="grid" onclick="window.open('https://www.sbsgameacademy.com/')">
+                                <div class="picture">
+                                    <img src="./assets/img/thumb_sbsg.jpg" alt="pofol">
+                                </div>
+                                <div class="desc">
+                                    <strong class="title">
+                                        SBS게임아카데미
+                                    </strong>
+                                    <div class="text">
+                                        <p class="date">2022.03 - 2022.05</p>
+                                        <p class="para">
+                                            SBS게임아카데미 커리큘럼 소개 및 상담 접수 반응형 사이트를 구축하였으며 오픈 이후 문의률 증대를 위한 커리큘럼 페이지 개선 작업을 하였습니다. 50여개의 커리큘럼 페이지 유지보수 및 조회 폼 작업이 쉽도록 URL 파라미터값을 가져와 수강료 조회 과목이름을 form input에 넘기는 작업을 하였습니다. GSAP을 이용하여 스크롤 애니메이션을 구현하였고 웹 성능 최적화를 위한 jquery lazy 플러그인을 사용하였습니다. 
+                                        </p>
+                                    </div>
+                                    <ul class="badge">
+                                        <li>리뉴얼</li><li>반응형</li><li>SEO</li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="btn-go"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="currentColor"><path d="M142.147 472.846 567.912 47.081 520.831 0 20.603 500.228 544.372 1024l47.081-47.086-437.489-437.486h849.431v-66.581H142.148z"></path></svg></a>
+                                </div>
+                            </li>
+                            <li class="grid" onclick="window.open('https://sbswebtoon.com/')">
+                                <div class="picture">
+                                    <img src="./assets/img/thumb_sbsw.jpg" alt="pofol">
+                                </div>
+                                <div class="desc">
+                                    <strong class="title">
+                                        SBS웹툰아카데미
+                                    </strong>
+                                    <div class="text">
+                                        <p class="date">2022.08 - 2022.10</p>
+                                        <p class="para">
+                                            SBS웹툰아카데미 적응형 사이트를 구축했습니다. 초기 레퍼런스 사이트 조사 및 스타일 가이드 제작 후 작업하였으며 갤러리 게시판의 스토리보드를 기획했습니다. 강사소개/교육과정/인터뷰/국비지원 안내/수강료 조회 등의 120여개의 페이지를 제작하였습니다. 오픈 이후에도 수강생들의 작품을 게시하는 취업&데뷔작 페이지를 제작했습니다. 
+                                        </p>
+                                    </div>
+                                    <ul class="badge">
+                                        <li>구축</li><li>적응형</li><li>SEO</li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="btn-go"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="currentColor"><path d="M142.147 472.846 567.912 47.081 520.831 0 20.603 500.228 544.372 1024l47.081-47.086-437.489-437.486h849.431v-66.581H142.148z"></path></svg></a>
+                                </div>
+                            </li>
+                            <li class="grid" onclick="window.open('https://koreaisacademy.com/')">
+                                <div class="picture">
+                                    <img src="./assets/img/thumb_ki.jpg" alt="pofol">
+                                </div>
+                                <div class="desc">
+                                    <strong class="title">
+                                        코리아IT아카데미
+                                    </strong>
+                                    <div class="text">
+                                        <p class="date">2021.11 - 2021.12</p>
+                                        <p class="para">
+                                            코리아IT아카데미 적응형 사이트를 리뉴얼 작업하였습니다. 학원안내/국비지원/자격증/교육과정/수강문의/포트폴리오 등의 페이지를 합하여 200 페이지를 제작하였습니다. 오픈 이후 팝업 형태의 커리큘럼 문의 페이지를 URL 파라미터 값으로 데이터를 불러오는 형식으로 바꿔 고객 문의률이 증대하였습니다.
+                                        </p>
+                                    </div>
+                                    <ul class="badge">
+                                        <li>리뉴얼</li><li>적응형</li><li>SEO</li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="btn-go"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="currentColor"><path d="M142.147 472.846 567.912 47.081 520.831 0 20.603 500.228 544.372 1024l47.081-47.086-437.489-437.486h849.431v-66.581H142.148z"></path></svg></a>
+                                </div>
+                            </li>
+                            <li class="grid" onclick="window.open('https://sbsart.com/')">
+                                <div class="picture">
+                                    <img src="./assets/img/thumb_sbsa.jpg" alt="pofol">
+                                </div>
+                                <div class="desc">
+                                    <strong class="title">
+                                        SBS컴퓨터아트학원
+                                    </strong>
+                                    <div class="text">
+                                        <p class="date">2024.03 - 2024.05</p>
+                                        <p class="para">
+                                            SBS컴퓨터아트학원 모바일 환경을 작업하였으며 커리큘럼 페이지 리뉴얼을 작업하였습니다. 자격증 페이지 리뉴얼 디자인/퍼블리싱 작업을 하였습니다.
+                                        </p>
+                                    </div>
+                                    <ul class="badge">
+                                        <li>리뉴얼</li><li>유지보수</li><li>SEO</li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="btn-go"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="currentColor"><path d="M142.147 472.846 567.912 47.081 520.831 0 20.603 500.228 544.372 1024l47.081-47.086-437.489-437.486h849.431v-66.581H142.148z"></path></svg></a>
+                                </div>
+                            </li>
+                            <li class="grid" onclick="window.open('https://allthat-beauty.com/web/2022/index.asp')">
+                                <div class="picture">
+                                    <img src="./assets/img/thumb_atb.jpg" alt="pofol">
+                                </div>
+                                <div class="desc">
+                                    <strong class="title">
+                                        올댓뷰티아카데미
+                                    </strong>
+                                    <div class="text">
+                                        <p class="date">2022.01 - 2022.02</p>
+                                        <p class="para">
+                                            올댓뷰티아카데미 메인 페이지와 모바일 환경을 작업하였으며 커리큘럼, 자격증 페이지, 국비지원 페이지 리뉴얼 작업을 하였습니다.
+                                        </p>
+                                    </div>
+                                    <ul class="badge">
+                                        <li>리뉴얼</li><li>반응형</li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="btn-go"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="currentColor"><path d="M142.147 472.846 567.912 47.081 520.831 0 20.603 500.228 544.372 1024l47.081-47.086-437.489-437.486h849.431v-66.581H142.148z"></path></svg></a>
+                                </div>
+                            </li>
+                            <li class="grid" onclick="window.open('https://kcookart.com/')">
+                                <div class="picture">
+                                    <img src="./assets/img/thumb_kcook.jpg" alt="pofol">
+                                </div>
+                                <div class="desc">
+                                    <strong class="title">
+                                        코리아요리아카데미
+                                    </strong>
+                                    <div class="text">
+                                        <p class="date">2022.11 - 2022.12</p>
+                                        <p class="para">
+                                            코리아요리아카데미 메인 페이지 작업과 강사소개, 커리큘럼 리뉴얼 작업을 하였으며 이벤트페이지 20건을 제작하여 고객 문의가 증대하였습니다.
+                                        </p>
+                                    </div>
+                                    <ul class="badge">
+                                        <li>리뉴얼</li><li>유지보수</li><li>SEO</li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="btn-go"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="currentColor"><path d="M142.147 472.846 567.912 47.081 520.831 0 20.603 500.228 544.372 1024l47.081-47.086-437.489-437.486h849.431v-66.581H142.148z"></path></svg></a>
+                                </div>
+                            </li>
+                            <li class="grid" onclick="window.open('https://drminish.co.kr/')">
+                                <div class="picture">
+                                    <img src="./assets/img/thumb_drm.jpg" alt="pofol">
+                                </div>
+                                <div class="desc">
+                                    <strong class="title">
+                                        닥터미니쉬
+                                    </strong>
+                                    <div class="text">
+                                        <p class="date">2020.11 - 2020.12</p>
+                                        <p class="para">
+                                            닥터미니쉬 쇼핑몰 사이트를 Bootstrap을 이용하여 반응형 구축하였습니다. 상품페이지/장바구니/결제화면/제품 상세정보 페이지를 제작하였습니다.
+                                        </p>
+                                    </div>
+                                    <ul class="badge">
+                                        <li>구축</li><li>반응형</li><li>Bootstrap</li><li>cafe24</li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="btn-go"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="currentColor"><path d="M142.147 472.846 567.912 47.081 520.831 0 20.603 500.228 544.372 1024l47.081-47.086-437.489-437.486h849.431v-66.581H142.148z"></path></svg></a>
+                                </div>
+                            </li>
+                            <li class="grid" onclick="window.open('https://grandeye.kr/main.html')">
+                                <div class="picture">
+                                    <img src="./assets/img/thumb_gge.jpg" alt="pofol">
+                                </div>
+                                <div class="desc">
+                                    <strong class="title">
+                                        강남그랜드안과
+                                    </strong>
+                                    <div class="text">
+                                        <p class="date">2021.04 - 2021.05</p>
+                                        <p class="para">
+                                            강남그랜드안과 리뉴얼 사이트를 반응형 제작하였습니다. 장비소개, 망막&middot;녹내장 페이지 등 20페이지 제작하였습니다.
+                                        </p>
+                                    </div>
+                                    <ul class="badge">
+                                        <li>구축</li><li>반응형</li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="btn-go"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="currentColor"><path d="M142.147 472.846 567.912 47.081 520.831 0 20.603 500.228 544.372 1024l47.081-47.086-437.489-437.486h849.431v-66.581H142.148z"></path></svg></a>
+                                </div>
+                            </li>
+                            <li class="grid" onclick="location.href='/work/skm.html'">
+                                <div class="picture">
+                                    <img src="./assets/img/thumbnail_skm_m.jpg" alt="pofol">
+                                </div>
+                                <div class="desc">
+                                    <strong class="title">
+                                        SK매직 매직똑똑 앱
+                                    </strong>
+                                    <div class="text">
+                                        <p class="date">2020.04 - 2020.08</p>
+                                        <p class="para">
+                                            SK매직 매장별 상품/실적을 관리하는 하이브리드 앱으로 판촉 관리, 배송 현황, 전시 관리 등 26개의 페이지를 제작하였습니다. 레드마인을 이용해 프로젝트 관리를 하고 SVN을 이용해 협업을 하였습니다.
+                                        </p>
+                                    </div>
+                                    <ul class="badge">
+                                        <li>구축</li><li>Hybrid APP</li><li>SVN</li><li>Redmine</li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="btn-go"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="currentColor"><path d="M142.147 472.846 567.912 47.081 520.831 0 20.603 500.228 544.372 1024l47.081-47.086-437.489-437.486h849.431v-66.581H142.148z"></path></svg></a>
+                                </div>
+                            </li>
+                            <li class="grid" onclick="location.href='/work/skweb.html'">
+                                <div class="picture">
+                                    <img src="./assets/img/thumbnail_skm_w.jpg" alt="pofol">
+                                </div>
+                                <div class="desc">
+                                    <strong class="title">
+                                        SK매직 매직똑똑 시스템
+                                    </strong>
+                                    <div class="text">
+                                        <p class="date">2020.03 - 2020.08</p>
+                                        <p class="para">
+                                            SK매직 매직똑똑 관리자 사이트를 구축하였습니다. 매출 및 실적 현황을 Chart.js를 이용해 제작하였습니다. 레드마인을 이용해 프로젝트 관리를 하고 SVN을 이용해 협업을 하였습니다.
+                                        </p>
+                                    </div>
+                                    <ul class="badge">
+                                        <li>구축</li><li>PC</li><li>Chart.js</li><li>Redmine</li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="btn-go"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="currentColor"><path d="M142.147 472.846 567.912 47.081 520.831 0 20.603 500.228 544.372 1024l47.081-47.086-437.489-437.486h849.431v-66.581H142.148z"></path></svg></a>
+                                </div>
+                            </li>
+                            <li class="grid" onclick="location.href='/work/medibeu.html'">
+                                <div class="picture">
+                                    <img src="./assets/img/thumbnail_mdb.jpg" alt="pofol">
+                                </div>
+                                <div class="desc">
+                                    <strong class="title">
+                                        메디뷰 베타버전
+                                    </strong>
+                                    <div class="text">
+                                        <p class="date">2019.08 - 2019.09</p>
+                                        <p class="para">
+                                            성형&middot;피부시술 정보앱 메디뷰 베타버전을 구축하였습니다. 리뷰, 병원정보, 이벤트, 필터 등의 페이지 제작을 하였고 CANVAS와 여러 jQuery plugin을 이용하였습니다.
+                                        </p>
+                                    </div>
+                                    <ul class="badge">
+                                        <li>구축</li><li>Hybrid APP</li><li>Canvas</li><li>Masonry.js</li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="btn-go"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="currentColor"><path d="M142.147 472.846 567.912 47.081 520.831 0 20.603 500.228 544.372 1024l47.081-47.086-437.489-437.486h849.431v-66.581H142.148z"></path></svg></a>
+                                </div>
+                            </li>
+                            <li class="grid" onclick="window.open('https://careers.sktelecom.com/')">
+                                <div class="picture">
+                                    <img src="./assets/img/thumbnail_skt.jpg" alt="pofol">
+                                </div>
+                                <div class="desc">
+                                    <strong class="title">
+                                        SKT 채용사이트
+                                    </strong>
+                                    <div class="text">
+                                        <p class="date">2019.09 - 2019.10</p>
+                                        <p class="para">
+                                            SKT 채용사이트 모바일 반응형 작업을 하였습니다. json을 이용한 비동기 통신 작업을 하였습니다.
+                                        </p>
+                                    </div>
+                                    <ul class="badge">
+                                        <li>리뉴얼</li><li>반응형</li><li>Eclipse</li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="btn-go"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="currentColor"><path d="M142.147 472.846 567.912 47.081 520.831 0 20.603 500.228 544.372 1024l47.081-47.086-437.489-437.486h849.431v-66.581H142.148z"></path></svg></a>
+                                </div>
+                            </li>
+                            <li class="grid" onclick="window.open('https://www.minish.co.kr/')">
+                                <div class="picture">
+                                    <img src="./assets/img/thumbnail_minish.jpg" alt="pofol">
+                                </div>
+                                <div class="desc">
+                                    <strong class="title">
+                                        미니쉬
+                                    </strong>
+                                    <div class="text">
+                                        <p class="para">
+                                            리뉴얼 및 관리자 페이지 유지보수작업을 하였습니다.
+                                        </p>
+                                    </div>
+                                    <ul class="badge">
+                                        <li>유지보수</li><li>반응형</li><li>svn</li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="btn-go"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="currentColor"><path d="M142.147 472.846 567.912 47.081 520.831 0 20.603 500.228 544.372 1024l47.081-47.086-437.489-437.486h849.431v-66.581H142.148z"></path></svg></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="work" id="work">
+                <div class="inner">
+                    <div class="head-group grid">
+                        <h2 data-splitting="chars">work</h2>
+                    </div>
+                    <div class="content">
+                        <div class="picture-box grid">
+                            <div class="cursor">
+                                <!-- <img class="cursor-img" src="./assets/img/thumb_mardi.jpg" alt="마르크"> -->
+                                <img class="cursor-img" src="./assets/img/thumb_heva.jpg" alt="헤바">
+                                <img class="cursor-img" src="./assets/img/thumb_enter.jpg" alt="엔터프라이즈">
+                                <img class="cursor-img" src="./assets/img/thumb_trans.png" alt="pofol">
+                            </div>
+                        </div>
+                        <ul class="work-list">
+                            <!-- <li class="grid" onclick="window.open('https://www.sbsgameacademy.com/')">
+                                <div class="picture">
+                                    <img src="./assets/img/thumb_mardi.jpg" alt="마르크">
+                                </div>
+                                <div class="desc">
+                                    <strong class="title">
+                                        마르디 메크르디
+                                    </strong>
+                                    <div class="text">
+                                        <p class="date">2024.07 - 2024.09</p>
+                                        <p class="para">
+                                            마르디 메크르디를 리뉴얼한 사이트로 React를 이용하여 장바구니, FAQ 게시판, 회원가입, 로그인 기능을 구현하였습니다. DB는 mongoose와 mongoDB를 사용하였고 jwt와 react form을 이용한 회원가입, 로그인 기능을 구현하고 redux를 이용하여 장바구니 상품과 로그인 상태를 관리하였습니다.
+                                            styled-component와 framer motion을 이용하여 스타일 및 애니메이션 작업을 하였습니다.
+                                        </p>
+                                    </div>
+                                    <ul class="badge">
+                                        <li>토이 프로젝트</li><li>react</li><li>쇼핑몰</li><li>mongoDB</li><li>framer</li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="btn-go"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="currentColor"><path d="M142.147 472.846 567.912 47.081 520.831 0 20.603 500.228 544.372 1024l47.081-47.086-437.489-437.486h849.431v-66.581H142.148z"></path></svg></a>
+                                </div>
+                            </li> -->
+                            <li class="grid" onclick="window.open('https://lostinyou4.github.io/works/heva/')">
+                                <div class="picture">
+                                    <img src="./assets/img/thumb_heva.jpg" alt="헤바">
+                                </div>
+                                <div class="desc">
+                                    <strong class="title">
+                                        HEVA
+                                    </strong>
+                                    <div class="text">
+                                        <p class="date">2024.06</p>
+                                        <p class="para">
+                                            HEVA 사이트를 클론코딩 작업하였고 GSAP과 Splitting 플러그인을 이용하여 다양한 애니메이션에 중점을 두었습니다.
+                                        </p>
+                                    </div>
+                                    <ul class="badge">
+                                        <li>클론코딩</li><li>반응형</li><li>GSAP</li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="btn-go"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="currentColor"><path d="M142.147 472.846 567.912 47.081 520.831 0 20.603 500.228 544.372 1024l47.081-47.086-437.489-437.486h849.431v-66.581H142.148z"></path></svg></a>
+                                </div>
+                            </li>
+                            <li class="grid" onclick="window.open('https://lostinyou4.github.io/works/enterprise/')">
+                                <div class="picture">
+                                    <img src="./assets/img/thumb_enter.jpg" alt="엔터프라이즈">
+                                </div>
+                                <div class="desc">
+                                    <strong class="title">
+                                        엔터프라이즈
+                                    </strong>
+                                    <div class="text">
+                                        <p class="date">2024.06</p>
+                                        <p class="para">
+                                            엔터프라이즈 사이트를 클론코딩 작업하였고 GSAP ScrollTrigger를 이용하여 스크롤 애니메이션을 구현하였습니다.
+                                        </p>
+                                    </div>
+                                    <ul class="badge">
+                                        <li>클론코딩</li><li>GSAP</li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="btn-go"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="currentColor"><path d="M142.147 472.846 567.912 47.081 520.831 0 20.603 500.228 544.372 1024l47.081-47.086-437.489-437.486h849.431v-66.581H142.148z"></path></svg></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="experience" id="experience" data-theme="dark">
+                <div class="inner grid">
+                    <div class="title">
+                        <h2><div class="line-wrap">experience</div></h2>
+                        <div class="hashtag"><p class="line-wrap"><span>#꾸준한</span> <span>#협력적인</span> <span>#배려심</span> <span>#효율적인</span> </p></div>
+                        <div class="hashtag"><p class="line-wrap"><span>#성실한</span> <span>#꼼꼼한</span> <span>#책임감 있는</span></p></div>
+                    </div>
+                    <div class="content">
+                        <ul class="experience-list">
+                            <li>
+                                <span class="bg">
+                                    <div class="dot-row"><div class="dot"></div><div class="dot"></div></div>
+                                    <div class="dot-row"><div class="dot"></div><div class="dot"></div></div>
+                                </span>
+                                <div class="desc">
+                                    <div class="tit">
+                                        <strong>공주대학교 게임디자인학과 졸업</strong>
+                                        <span class="position">최종학력</span>
+                                    </div>
+                                    <div class="date">2016.02.</div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="bg">
+                                    <div class="dot-row"><div class="dot"></div><div class="dot"></div></div>
+                                    <div class="dot-row"><div class="dot"></div><div class="dot"></div></div>
+                                </span>
+                                <div class="desc">
+                                    <div class="tit">
+                                        <strong>정보처리기사 취득</strong>
+                                        <span class="position">자격증</span>
+                                    </div>
+                                    <div class="date">2017.05</div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="bg">
+                                    <div class="dot-row"><div class="dot"></div><div class="dot"></div></div>
+                                    <div class="dot-row"><div class="dot"></div><div class="dot"></div></div>
+                                </span>
+                                <div class="desc">
+                                    <div class="tit">
+                                        <strong>그린컴퓨터학원 웹퍼블리셔 과정 수료</strong>
+                                        <span class="position">교육</span>
+                                    </div>
+                                    <div class="date">2018.06 - 2018.11</div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="bg">
+                                    <div class="dot-row"><div class="dot"></div><div class="dot"></div></div>
+                                    <div class="dot-row"><div class="dot"></div><div class="dot"></div></div>
+                                </span>
+                                <div class="desc">
+                                    <div class="tit">
+                                        <strong>(주)카모드에스</strong>
+                                        <span class="position">웹디자인 <i class="italic">+</i> 웹퍼블리싱 사원 근무</span>
+                                        <p class="text">CAFE24를 이용한 자사몰 웹디자인과 퍼블리싱 유지보수 작업을 전담하였습니다.</p>
+                                    </div>
+                                    <div class="date">2019.01 - 2019.05</div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="bg">
+                                    <div class="dot-row"><div class="dot"></div><div class="dot"></div></div>
+                                    <div class="dot-row"><div class="dot"></div><div class="dot"></div></div>
+                                </span>
+                                <div class="desc">
+                                    <div class="tit">
+                                        <strong>(주)미플즈</strong>
+                                        <span class="position">웹퍼블리싱 <i class="italic">/</i> 웹에이전시 주임 근무 </span>
+                                        <p class="text">구축 업무로 성형정보 앱 메디뷰 베타버전, SKT 채용사이트 반응형 작업, SK매직 매직똑똑 시스템과 앱 구축, 닥터미니쉬 사이트 구축, 강남 그랜드 안과 리뉴얼을 하였습니다.</p>
+                                    </div>
+                                    <div class="date">2019.08 - 2021.06</div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="bg">
+                                    <div class="dot-row"><div class="dot"></div><div class="dot"></div></div>
+                                    <div class="dot-row"><div class="dot"></div><div class="dot"></div></div>
+                                </span>
+                                <div class="desc">
+                                    <div class="tit">
+                                        <strong>(주)코리아교육그룹</strong>
+                                        <span class="position">웹퍼블리싱 <i class="italic">/</i> 컨텐츠개발본부 대리 근무</span>
+                                        <p class="text">계열사 홈페이지 구축 및 9개 이상의 사이트, 수강생앱 및 자사 인트라넷 유지보수와 공모전 사이트 리뉴얼 및 이벤트 프로모션 페이지 퍼블리싱을 전담하였습니다.</p>
+                                    </div>
+                                    <div class="date">2021.06 - 2024.05</div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="bg">
+                                    <div class="dot-row"><div class="dot"></div><div class="dot"></div></div>
+                                    <div class="dot-row"><div class="dot"></div><div class="dot"></div></div>
+                                </span>
+                                <div class="desc">
+                                    <div class="tit">
+                                        <strong>코리아IT아카데미 프론트엔드 과정 수료</strong>
+                                        <span class="position">교육</span>
+                                    </div>
+                                    <div class="date">2024.03 - 2024.08</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+            <div class="inner">
+                <h2>contact</h2>
+                <ul class="meta">
+                    <li><i>©</i>2024</li>
+                    <li><a href="mailto:things8134@gmail.com">things8134@gmail.com</a></li>
+                    <li><a href="tel:010-2667-4758">010 2667 4758</a></li>
+                    <li><a href="https://github.com/lostinyou4" target="_blank">GitHub</a></li>
+                    <li><a href="https://url.kr/ltohdh" target="_blank">Notion</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -194,10 +194,16 @@ html.lenis, html.lenis body {
 
 }
 
+@media (max-width: 1024px){
+
+}
+
 @media (min-width:769px){
     body{cursor: none;}
+    
 }
 @media (max-width: 768px){
     .pc-show{display: none;}
     .mo-show{display: block;}
+    .cursor {display: none;}
 }

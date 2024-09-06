@@ -1,6 +1,5 @@
 //smooth
 const lenis = new Lenis({
-    // 설정 옵션
     smooth: true
   });
   
@@ -15,8 +14,7 @@ window.addEventListener('resize', function() {
     lenis.resize();
     document.body.style.height = 'auto';
     setTimeout(() => {
-        document.body.style.height = ''; // 이전 상태로 복원
-        //console.log('Updated scrollHeight:', document.body.scrollHeight); 
+        document.body.style.height = ''; 
       }, 100);
 });
 

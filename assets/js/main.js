@@ -222,6 +222,10 @@ gsap.fromTo('#work h2 .char',
     }
 })
 
+const MEDIAQUERY = window.matchMedia("(max-width: 1024px)").matches;
+var yPos = 0;
+var isResizing = false;
+
 class WorkAnim {
     constructor(workCate) {
         // DOM 요소 설정
@@ -237,7 +241,6 @@ class WorkAnim {
 
         // 위치 및 스크롤 정보
         this.scrollPos = 0;
-        this.yPos = 0;
 
         // 초기 설정
         this.init();
@@ -252,34 +255,52 @@ class WorkAnim {
         });
 
         // 마우스 이벤트 등록
-        document.addEventListener('mousemove', (e) => this.onMouseMove(e));
+        document.addEventListener('mousemove', this.onMouseMove.bind(this));
         // 스크롤 이벤트 등록
-        $(window).scroll((e) => this.onScroll(e));
+        $(window).scroll(this.onScroll.bind(this));
+        $(window).resize(this.onResize.bind(this));
     }
 
     // 마우스 이동 이벤트 핸들러
     onMouseMove(e) {
-        if (!window.matchMedia("(max-width: 1024px)").matches) {
-            this.yPos = e.pageY;
+        if (!MEDIAQUERY) {
+            yPos = e.pageY;
             this.movePicture();
         }
     }
 
     // 스크롤 이벤트 핸들러
     onScroll(e) {
-        if (this.scrollPos !== $(window).scrollTop()) {
-            this.yPos -= this.scrollPos;
-            this.scrollPos = $(window).scrollTop();
-            this.yPos += this.scrollPos;
+        if (!MEDIAQUERY) {
 
-            this.movePicture();
+            if(isResizing) return;
+
+            if (this.scrollPos !== $(window).scrollTop()) {
+                yPos -= this.scrollPos;
+                this.scrollPos = $(window).scrollTop();
+                yPos += this.scrollPos;
+    
+                this.movePicture();
+            }
         }
+        
+    }
+
+    // 창 크기 조정 이벤트 핸들러
+    onResize(e) {
+        isResizing = true; // 창 크기 조정 플래그 활성화
+
+        // 500ms 동안 창 크기 조정이 끝나지 않으면 플래그를 다시 false로 설정
+        clearTimeout(this.resizeTimeout);
+        this.resizeTimeout = setTimeout(() => {
+            isResizing = false;
+        }, 500);
     }
 
     // 마우스 위치에 따라 이미지 이동
     movePicture() {
-        if (this.yPos >= this.workList.offset().top && this.yPos <= this.workList.offset().top + this.workList.outerHeight()) {
-            gsap.to(this.pictures, { y: this.yPos - this.workList.offset().top });
+        if (yPos >= this.workList.offset().top && this.yPos <= this.workList.offset().top + this.workList.outerHeight()) {
+            gsap.to(this.pictures, { y: yPos - this.workList.offset().top });
 
             // 썸네일 변경
             const cursorPos = this.getCursorPos();
@@ -301,7 +322,7 @@ class WorkAnim {
     getCursorPos() {
         for (let i = 0; i < this.works.length; i++) {
             const workScrollPos = this.works.eq(i).offset().top + this.works.eq(i).outerHeight();
-            if (workScrollPos > this.yPos) {
+            if (workScrollPos > yPos) {
                 return i;
             }
         }
@@ -313,7 +334,7 @@ class WorkAnim {
         this.prevPic = this.pictures.eq(this.prevIndex);
         this.currentPic = this.pictures.eq(this.currentIndex);
 
-        if (!window.matchMedia("(max-width: 1024px)").matches) {
+        if (!MEDIAQUERY) {
             if (this.currentPic) {
                 gsap.fromTo(this.currentPic, {
                     clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
@@ -344,7 +365,7 @@ class WorkAnim {
         this.prevPic = this.pictures.eq(this.prevIndex);
         this.currentPic = this.pictures.eq(this.currentIndex);
 
-        if (!window.matchMedia("(max-width: 1024px)").matches) {
+        if (!MEDIAQUERY) {
             if (this.currentPic) {
                 gsap.fromTo(this.currentPic, {
                     clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",

@@ -4,7 +4,7 @@
 .cover {padding-top: 130px; margin-bottom: 20px;}
 .cover .parallax {display: flex; justify-content: center; align-items: center;}
 .cover .parallax .mask {max-height: 900px; overflow: hidden;}
-.cover .parallax img {width: 100%; min-height: 102vh; object-fit: cover; aspect-ratio: 362/215; transform: translateY(0);}
+.cover .parallax img {width: 100%; min-height: 100vh; object-fit: cover; aspect-ratio: 362/215; transform: translateY(0);}
 
 
 .about {color: #646b73;}

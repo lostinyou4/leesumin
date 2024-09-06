@@ -150,12 +150,15 @@ parallaxTl = gsap.timeline({
         scrub: 0
     }
 })
-parallaxTl.fromTo(".parallax .img", {
-    yPercent: -37
-},{
-    yPercent: 36
-    
-})
+if (!window.matchMedia("(max-width: 768px)").matches) {
+    parallaxTl.fromTo(".parallax .img", {
+        yPercent: -37
+    },{
+        yPercent: 36
+        
+    })
+}
+
 
 //소개
 aboutTl = gsap.timeline({

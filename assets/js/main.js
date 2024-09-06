@@ -223,7 +223,6 @@ gsap.fromTo('#work h2 .char',
 })
 
 const MEDIAQUERY = window.matchMedia("(max-width: 1024px)").matches;
-var yPos = 0;
 var isResizing = false;
 
 class WorkAnim {
@@ -241,6 +240,7 @@ class WorkAnim {
 
         // 위치 및 스크롤 정보
         this.scrollPos = 0;
+        this.yPos = 0;
 
         // 초기 설정
         this.init();
@@ -255,16 +255,17 @@ class WorkAnim {
         });
 
         // 마우스 이벤트 등록
-        document.addEventListener('mousemove', this.onMouseMove.bind(this));
+        document.addEventListener('mousemove', (e) => this.onMouseMove(e));
         // 스크롤 이벤트 등록
-        $(window).scroll(this.onScroll.bind(this));
-        $(window).resize(this.onResize.bind(this));
+        $(window).scroll((e) => this.onScroll(e));
+        $(window).resize((e) => this.onResize(e));
     }
 
     // 마우스 이동 이벤트 핸들러
     onMouseMove(e) {
         if (!MEDIAQUERY) {
-            yPos = e.pageY;
+
+            this.yPos = e.pageY;
             this.movePicture();
         }
     }
@@ -275,10 +276,11 @@ class WorkAnim {
 
             if(isResizing) return;
 
+
             if (this.scrollPos !== $(window).scrollTop()) {
-                yPos -= this.scrollPos;
+                this.yPos -= this.scrollPos;
                 this.scrollPos = $(window).scrollTop();
-                yPos += this.scrollPos;
+                this.yPos += this.scrollPos;
     
                 this.movePicture();
             }
@@ -299,8 +301,8 @@ class WorkAnim {
 
     // 마우스 위치에 따라 이미지 이동
     movePicture() {
-        if (yPos >= this.workList.offset().top && this.yPos <= this.workList.offset().top + this.workList.outerHeight()) {
-            gsap.to(this.pictures, { y: yPos - this.workList.offset().top });
+        if (this.yPos >= this.workList.offset().top && this.yPos <= this.workList.offset().top + this.workList.outerHeight()) {
+            gsap.to(this.pictures, { y: this.yPos - this.workList.offset().top });
 
             // 썸네일 변경
             const cursorPos = this.getCursorPos();
@@ -322,7 +324,7 @@ class WorkAnim {
     getCursorPos() {
         for (let i = 0; i < this.works.length; i++) {
             const workScrollPos = this.works.eq(i).offset().top + this.works.eq(i).outerHeight();
-            if (workScrollPos > yPos) {
+            if (workScrollPos > this.yPos) {
                 return i;
             }
         }
